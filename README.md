@@ -1,6 +1,8 @@
 # OFL Skills
 
-Machine-readable facilitation patterns and AI prompt templates for the Open Facilitation Library.
+Machine-readable facilitation patterns and AI prompt templates for the [Open Facilitation Library](https://github.com/Open-Facilitation-Library).
+
+We're building "GitHub for facilitation workflows" — an open-source library where facilitation methodologies are documented in structured, machine-readable formats that AI tools can understand and apply.
 
 ## What Are Skills?
 
@@ -40,6 +42,11 @@ Each pattern follows the [Why-How-Who schema](patterns/schema/README.md):
 
 - [synthesis](https://github.com/Open-Facilitation-Library/synthesis) - Knowledge base and evaluation
 - [cross-pollination](https://github.com/Open-Facilitation-Library/cross-pollination) - Opinion exposure tools
+
+## Stay Connected
+
+- **[Subscribe on Substack](https://openfac.substack.com)** - Updates on OFL research and community
+- **[Support on Giveth](https://giveth.io/project/open-facilitation-library)** - Help fund open facilitation standards
 
 ## License
 
