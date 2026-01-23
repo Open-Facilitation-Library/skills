@@ -1,0 +1,197 @@
+# Delphi Method Pattern
+# Structured expert consultation through iterative rounds
+
+id: delphi-method
+name: Delphi Method
+version: "1.0.0"
+category: deliberative
+tags:
+  - expert-consultation
+  - forecasting
+  - consensus-building
+  - iterative
+
+source:
+  methodology: Delphi Technique
+  creator: RAND Corporation (Olaf Helmer, Norman Dalkey)
+  reference_url: https://www.rand.org/topics/delphi-method.html
+  license: Public domain
+
+why:
+  purpose: >
+    Achieve convergence of expert opinion through structured, anonymous,
+    iterative consultation with controlled feedback between rounds.
+  outcomes:
+    - agreement_building
+    - preference_elicitation
+    - error_surfacing
+    - synthesis
+  use_cases:
+    - Technology forecasting
+    - Policy development
+    - Strategic planning
+    - Risk assessment
+    - Research prioritization
+  contraindications:
+    - Decisions requiring immediate action
+    - Topics where expert consensus is inappropriate
+    - When diverse lay perspectives matter more than expertise
+
+how:
+  format: asynchronous
+  interaction_mode: one-to-one
+  duration:
+    min_minutes: 180  # Multiple rounds over days
+    max_minutes: 2880  # Can span weeks
+    recommended_minutes: 720  # ~12 hours across rounds
+
+  phases:
+    - name: Round 1 - Initial Elicitation
+      purpose: Gather initial expert opinions without influence
+      duration_minutes: 30
+      facilitator_actions:
+        - Present the questions/scenarios
+        - Collect individual responses
+        - Ensure anonymity
+      participant_actions:
+        - Provide independent assessment
+        - Explain reasoning
+        - Rate confidence levels
+      outputs:
+        - Individual responses
+        - Reasoning documentation
+        - Confidence ratings
+
+    - name: Analysis - Statistical Summary
+      purpose: Aggregate and analyze first round responses
+      duration_minutes: 60
+      facilitator_actions:
+        - Calculate median, quartiles, ranges
+        - Identify consensus and divergence areas
+        - Extract key reasoning themes
+      participant_actions: []
+      outputs:
+        - Statistical summary
+        - Anonymized reasoning summary
+        - Divergence areas identified
+
+    - name: Round 2 - Revision with Feedback
+      purpose: Allow revision based on group statistics
+      duration_minutes: 30
+      facilitator_actions:
+        - Present statistical summary
+        - Share anonymized reasoning
+        - Ask for revised estimates
+        - Request justification for outliers
+      participant_actions:
+        - Review group statistics
+        - Consider others' reasoning
+        - Revise or maintain position
+        - Justify if outside consensus
+      outputs:
+        - Revised responses
+        - Justifications for outliers
+
+    - name: Additional Rounds (if needed)
+      purpose: Continue iteration until convergence
+      duration_minutes: 30
+      facilitator_actions:
+        - Repeat analysis and feedback
+        - Check convergence criteria
+        - Decide to continue or conclude
+      participant_actions:
+        - Continue revision process
+      outputs:
+        - Converging estimates
+        - Stable reasoning
+
+    - name: Final Synthesis
+      purpose: Produce final consensus report
+      duration_minutes: 30
+      facilitator_actions:
+        - Document final consensus
+        - Note remaining disagreements
+        - Summarize key insights
+      participant_actions:
+        - Validate final summary
+      outputs:
+        - Consensus report
+        - Minority positions documented
+        - Confidence assessment
+
+  intervention_style:
+    directiveness: semi-directive
+    question_types:
+      - closed  # For estimates
+      - open    # For reasoning
+      - probing # For outliers
+    timing: scheduled
+
+  artifacts:
+    inputs:
+      - Structured questions or scenarios
+      - Background information
+      - Expert panel selection
+    outputs:
+      - Consensus estimates with confidence ranges
+      - Key reasoning summary
+      - Minority position documentation
+    intermediate:
+      - Round-by-round statistics
+      - Anonymized reasoning compilations
+
+who:
+  group_size:
+    min: 7
+    max: 50
+    optimal: 15
+
+  roles:
+    - name: Expert Panelist
+      required: true
+      responsibilities:
+        - Provide honest assessments
+        - Explain reasoning
+        - Consider group feedback
+        - Maintain independence
+    - name: Facilitator/Analyst
+      required: true
+      responsibilities:
+        - Design questions
+        - Analyze responses
+        - Maintain anonymity
+        - Synthesize results
+
+  participant_requirements:
+    preparation: Domain expertise on topic
+    skills:
+      - Ability to quantify uncertainty
+      - Willingness to revise views
+      - Independent thinking
+    psychological_safety: high  # Due to anonymity
+
+  power_dynamics:
+    hierarchy_sensitive: false  # Anonymity protects
+    anonymity_supported: true   # Core to method
+    minority_voice_protection: true
+
+ai_facilitation:
+  suitability: high
+  automatable_phases:
+    - Round 1 - Initial Elicitation
+    - Analysis - Statistical Summary
+    - Round 2 - Revision with Feedback
+    - Additional Rounds
+    - Final Synthesis
+  human_required_phases:
+    - Expert panel selection
+    - Question design validation
+  prompt_templates:
+    - delphi/initial-elicitation.md
+    - delphi/feedback-presentation.md
+    - delphi/outlier-probe.md
+  evaluation_criteria:
+    - Convergence achieved
+    - Response rate per round
+    - Quality of reasoning captured
+    - Panel retention across rounds

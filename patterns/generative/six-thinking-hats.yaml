@@ -1,0 +1,238 @@
+# Six Thinking Hats Pattern
+# Edward de Bono's parallel thinking method
+
+id: six-thinking-hats
+name: Six Thinking Hats
+version: "1.0.0"
+category: generative
+tags:
+  - parallel-thinking
+  - decision-making
+  - creativity
+  - structured-discussion
+
+source:
+  methodology: Six Thinking Hats
+  creator: Edward de Bono
+  reference_url: https://www.debonogroup.com/services/core-programs/six-thinking-hats/
+  license: Attribution required
+
+why:
+  purpose: >
+    Enable parallel thinking by having all participants focus on one type of
+    thinking at a time, reducing conflict and improving discussion quality.
+  outcomes:
+    - ideation
+    - error_surfacing
+    - agreement_building
+    - perspective_taking
+  use_cases:
+    - Strategic planning sessions
+    - Product development decisions
+    - Problem-solving workshops
+    - Team retrospectives
+  contraindications:
+    - Very simple decisions not requiring structured analysis
+    - Extremely time-constrained situations
+    - Groups unfamiliar with the methodology without training
+
+how:
+  format: synchronous
+  interaction_mode: small-group
+  duration:
+    min_minutes: 45
+    max_minutes: 120
+    recommended_minutes: 60
+
+  phases:
+    - name: Blue Hat - Process
+      purpose: Set the agenda and thinking sequence
+      duration_minutes: 5
+      facilitator_actions:
+        - Explain the topic and goal
+        - Define the hat sequence
+        - Set time limits for each hat
+      participant_actions:
+        - Understand the process
+        - Agree on sequence
+      outputs:
+        - Agreed agenda
+        - Time allocation
+
+    - name: White Hat - Facts
+      purpose: Gather objective information
+      duration_minutes: 10
+      facilitator_actions:
+        - Ask what facts are known
+        - Identify information gaps
+        - Keep discussion neutral
+      participant_actions:
+        - Share known facts
+        - Identify missing data
+        - Avoid opinions
+      outputs:
+        - Fact inventory
+        - Information gaps list
+
+    - name: Red Hat - Feelings
+      purpose: Express emotions and intuitions
+      duration_minutes: 5
+      facilitator_actions:
+        - Invite gut reactions
+        - Accept all feelings without justification
+        - Note emotional patterns
+      participant_actions:
+        - Share intuitive responses
+        - Express concerns or excitement
+        - No need to explain
+      outputs:
+        - Emotional temperature check
+        - Intuition inventory
+
+    - name: Yellow Hat - Benefits
+      purpose: Explore positive aspects and value
+      duration_minutes: 10
+      facilitator_actions:
+        - Ask for benefits and opportunities
+        - Encourage optimistic thinking
+        - Capture all positives
+      participant_actions:
+        - Identify advantages
+        - Find opportunities
+        - Think optimistically
+      outputs:
+        - Benefits list
+        - Opportunity inventory
+
+    - name: Black Hat - Risks
+      purpose: Identify problems and risks
+      duration_minutes: 10
+      facilitator_actions:
+        - Ask for risks and problems
+        - Encourage critical thinking
+        - Ensure thoroughness
+      participant_actions:
+        - Identify risks
+        - Point out weaknesses
+        - Think critically
+      outputs:
+        - Risk inventory
+        - Problem list
+
+    - name: Green Hat - Creativity
+      purpose: Generate new ideas and alternatives
+      duration_minutes: 15
+      facilitator_actions:
+        - Encourage wild ideas
+        - Build on suggestions
+        - Suspend judgment
+      participant_actions:
+        - Generate alternatives
+        - Propose modifications
+        - Think creatively
+      outputs:
+        - Ideas list
+        - Alternative approaches
+
+    - name: Blue Hat - Summary
+      purpose: Synthesize and conclude
+      duration_minutes: 5
+      facilitator_actions:
+        - Summarize key points from each hat
+        - Identify next steps
+        - Check for consensus
+      participant_actions:
+        - Validate summary
+        - Commit to actions
+      outputs:
+        - Summary document
+        - Action items
+
+  intervention_style:
+    directiveness: directive
+    question_types:
+      - open
+      - probing
+    timing: scheduled
+
+  artifacts:
+    inputs:
+      - Topic or decision to analyze
+      - Background context
+    outputs:
+      - Structured analysis by thinking type
+      - Action items
+      - Decision recommendation
+    intermediate:
+      - Hat-specific notes
+      - Ideas generated per phase
+
+who:
+  group_size:
+    min: 3
+    max: 12
+    optimal: 6
+
+  roles:
+    - name: Facilitator
+      required: true
+      responsibilities:
+        - Manage hat transitions
+        - Keep time
+        - Enforce thinking type discipline
+    - name: Participant
+      required: true
+      responsibilities:
+        - Switch thinking modes
+        - Contribute to each hat
+        - Respect the current hat's focus
+
+  participant_requirements:
+    preparation: Basic understanding of Six Hats methodology
+    skills:
+      - Ability to separate thinking modes
+      - Willingness to think differently
+    psychological_safety: medium
+
+  power_dynamics:
+    hierarchy_sensitive: true
+    anonymity_supported: false
+    minority_voice_protection: false
+
+ai_facilitation:
+  suitability: medium
+  automatable_phases:
+    - White Hat - Facts (data gathering)
+    - Blue Hat - Summary (synthesis)
+  human_required_phases:
+    - Red Hat - Feelings (authentic emotion)
+    - Green Hat - Creativity (novel ideation)
+    - Group dynamics management
+  prompt_templates:
+    - six-hats/white-hat-facts.md
+    - six-hats/yellow-hat-benefits.md
+    - six-hats/black-hat-risks.md
+    - six-hats/green-hat-ideas.md
+  evaluation_criteria:
+    - Thinking mode separation
+    - Coverage of all perspectives
+    - Quality of synthesis
+    - Participant engagement
+
+# --- ADAPTATION FOR ASYNC/AI ---
+async_adaptation:
+  description: >
+    Six Thinking Hats can be adapted for asynchronous AI-facilitated sessions
+    by running each hat as a separate conversation session (daisy-chaining).
+  approach:
+    - Run each hat as independent one-to-one session
+    - Pass outputs as context to next session
+    - Synthesize across all participants at end
+  benefits:
+    - Allows individual deep thinking
+    - Scales to larger groups
+    - Removes groupthink pressure
+  limitations:
+    - Loses real-time group dynamics
+    - Red Hat authenticity may suffer
+    - Longer total duration

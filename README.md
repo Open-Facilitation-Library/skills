@@ -1,0 +1,42 @@
+# OFL Skills
+
+Machine-readable facilitation patterns and AI prompt templates for the Open Facilitation Library.
+
+## What Are Skills?
+
+Skills are structured descriptions of facilitation methodologies that can be:
+- Used by AI systems to facilitate conversations
+- Compared using the Why-How-Who framework
+- Composed into complex workflows
+
+## Pattern Schema
+
+Each pattern follows the [Why-How-Who schema](patterns/schema/README.md):
+- **Why**: Purpose and intended outcomes
+- **How**: Process mechanics and techniques
+- **Who**: Participant dynamics and roles
+
+## Current Patterns
+
+| Pattern | Category | AI Suitability |
+|---------|----------|----------------|
+| [Cross-Pollination](patterns/deliberative/cross-pollination.yaml) | Deliberative | High |
+| [Delphi Method](patterns/deliberative/delphi-method.yaml) | Deliberative | High |
+| [Six Thinking Hats](patterns/generative/six-thinking-hats.yaml) | Generative | Medium |
+| [Retrospective](patterns/generative/retrospective.yaml) | Generative | Medium |
+
+## Adding Patterns
+
+1. Use the [pattern schema](patterns/schema/pattern-schema.yaml) as template
+2. Place in appropriate category folder (deliberative/generative/transformative)
+3. Include source references
+4. Submit a pull request
+
+## Related Repos
+
+- [synthesis](https://github.com/Open-Facilitation-Library/synthesis) - Knowledge base and evaluation
+- [cross-pollination](https://github.com/Open-Facilitation-Library/cross-pollination) - Opinion exposure tools
+
+## License
+
+MIT License

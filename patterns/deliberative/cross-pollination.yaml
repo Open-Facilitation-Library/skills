@@ -1,0 +1,189 @@
+# Cross-Pollination Pattern
+# A method for exposing participants to diverse opinions to foster understanding
+
+id: cross-pollination
+name: Cross-Pollination
+version: "1.0.0"
+category: deliberative
+tags:
+  - opinion-exposure
+  - deliberation
+  - perspective-taking
+  - collective-intelligence
+
+source:
+  methodology: Cross-Pollination Deliberation
+  creator: OFL Research Team / Oxford CPSG
+  reference_url: https://github.com/zhiganov/Open-Facilitation-Library
+  license: MIT
+
+why:
+  purpose: >
+    Expose participants to diverse and opposing opinions to deepen understanding
+    of collective decision problems beyond simple vote aggregation.
+  outcomes:
+    - perspective_taking
+    - error_surfacing
+    - agreement_building
+  use_cases:
+    - Participatory budgeting decisions
+    - Policy preference gathering
+    - Community planning input
+    - Organizational strategy alignment
+  contraindications:
+    - Highly sensitive personal topics without psychological safety
+    - Time-critical decisions requiring immediate consensus
+    - Groups with extreme power imbalances without anonymity
+
+how:
+  format: asynchronous
+  interaction_mode: one-to-one
+  duration:
+    min_minutes: 15
+    max_minutes: 60
+    recommended_minutes: 30
+
+  phases:
+    - name: Initial Opinion Capture
+      purpose: Gather participant's starting position and reasoning
+      duration_minutes: 10
+      facilitator_actions:
+        - Present the decision question
+        - Ask for initial vote/preference
+        - Probe for reasoning behind position
+      participant_actions:
+        - State initial preference
+        - Explain reasoning
+      outputs:
+        - Initial vote
+        - Reasoning statement
+
+    - name: Opinion Clustering
+      purpose: Group similar opinions for efficient exposure
+      duration_minutes: 0  # Automated
+      facilitator_actions:
+        - Cluster responses by vote option
+        - Generate embeddings for semantic similarity
+        - Summarize cluster themes
+      participant_actions: []
+      outputs:
+        - Opinion clusters
+        - Cluster summaries
+
+    - name: Cross-Pollination Exposure
+      purpose: Present opposing or different viewpoints
+      duration_minutes: 10
+      facilitator_actions:
+        - Select opinions from different clusters
+        - Present contrasting viewpoints
+        - Ask for participant's reaction
+      participant_actions:
+        - Read opposing opinions
+        - Reflect on different perspectives
+        - Respond to moderator questions
+      outputs:
+        - Reactions to opposing views
+        - Updated understanding
+
+    - name: Final Position
+      purpose: Capture any opinion changes and final reasoning
+      duration_minutes: 5
+      facilitator_actions:
+        - Ask if position has changed
+        - Capture final vote
+        - Ask what influenced any change
+      participant_actions:
+        - State final preference
+        - Explain any changes
+      outputs:
+        - Final vote
+        - Change explanation (if any)
+
+  intervention_style:
+    directiveness: semi-directive
+    question_types:
+      - open
+      - probing
+      - clarifying
+    timing: responsive
+
+  artifacts:
+    inputs:
+      - Decision question
+      - Vote options
+    outputs:
+      - Initial and final votes
+      - Reasoning statements
+      - Opinion change analysis
+    intermediate:
+      - Opinion clusters
+      - Cluster summaries
+      - Cross-pollination pairs
+
+who:
+  group_size:
+    min: 10
+    max: 1000
+    optimal: 50
+
+  roles:
+    - name: Participant
+      required: true
+      responsibilities:
+        - Share honest opinions
+        - Engage with opposing views
+        - Reflect on perspective changes
+    - name: Moderator (AI or Human)
+      required: true
+      responsibilities:
+        - Present questions clearly
+        - Select appropriate cross-pollination pairs
+        - Facilitate reflection
+
+  participant_requirements:
+    preparation: Familiarity with the topic being decided
+    skills:
+      - Basic literacy
+      - Willingness to consider other views
+    psychological_safety: medium
+
+  power_dynamics:
+    hierarchy_sensitive: false
+    anonymity_supported: true
+    minority_voice_protection: true
+
+ai_facilitation:
+  suitability: high
+  automatable_phases:
+    - Initial Opinion Capture
+    - Opinion Clustering
+    - Cross-Pollination Exposure
+    - Final Position
+  human_required_phases: []
+  prompt_templates:
+    - cross-pollination/initial-capture.md
+    - cross-pollination/exposure.md
+    - cross-pollination/reflection.md
+  evaluation_criteria:
+    - Opinion diversity in exposure
+    - Quality of summarization
+    - Participant engagement rate
+    - Thoughtfulness of reflections
+
+# --- VARIANTS ---
+variants:
+  - id: simple-cross-pollination
+    description: Basic exposure without moderator intervention
+    changes:
+      - Remove moderator Q&A phase
+
+  - id: clarified-cross-pollination
+    description: Includes moderator questions for clarification
+    changes:
+      - Add clarifying questions after exposure
+
+  - id: adversarial-cross-pollination
+    description: Deliberately selects maximally opposing views
+    changes:
+      - Use embedding distance to find most contrasting opinions
+      - Include challenge questions from moderator

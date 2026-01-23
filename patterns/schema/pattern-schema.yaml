@@ -1,0 +1,94 @@
+# Open Facilitation Library - Pattern Schema
+# Version: 1.0
+# Based on the "Why-How-Who" framework from Cooperative AI research
+
+# ============================================
+# PATTERN SCHEMA DEFINITION
+# ============================================
+
+pattern:
+  # --- METADATA ---
+  id: string                    # Unique identifier (e.g., "six-thinking-hats")
+  name: string                  # Human-readable name
+  version: string               # Schema version (semver)
+  category: enum                # deliberative | generative | transformative
+  tags: list[string]            # Searchable tags
+
+  # --- SOURCE & ATTRIBUTION ---
+  source:
+    methodology: string         # Original methodology name
+    creator: string             # Original creator/author
+    reference_url: string       # Link to original documentation
+    license: string             # Content license
+
+  # --- WHY (Purpose & Outcomes) ---
+  why:
+    purpose: string             # Primary goal of this pattern
+    outcomes:                   # Expected outcomes
+      - agreement_building      # Helps group reach consensus
+      - preference_elicitation  # Surfaces individual preferences
+      - error_surfacing         # Identifies gaps/mistakes in thinking
+      - perspective_taking      # Exposes participants to other views
+      - synthesis               # Aggregates inputs into actionable output
+      - ideation                # Generates new ideas
+      - conflict_resolution     # Resolves disagreements
+    use_cases: list[string]     # Example scenarios where this applies
+    contraindications: list[string]  # When NOT to use this pattern
+
+  # --- HOW (Process & Techniques) ---
+  how:
+    format: enum                # synchronous | asynchronous | hybrid
+    interaction_mode: enum      # one-to-one | small-group | large-group | plenary
+    duration:
+      min_minutes: integer
+      max_minutes: integer
+      recommended_minutes: integer
+
+    phases: list[phase]         # Ordered list of process phases
+    # Each phase:
+    #   - name: string
+    #   - purpose: string
+    #   - duration_minutes: integer
+    #   - facilitator_actions: list[string]
+    #   - participant_actions: list[string]
+    #   - outputs: list[string]
+
+    intervention_style:
+      directiveness: enum       # non-directive | semi-directive | directive
+      question_types: list      # open | closed | probing | clarifying | challenging
+      timing: enum              # scheduled | responsive | threshold-based
+
+    artifacts:                  # What the pattern produces
+      inputs: list[string]      # Required inputs
+      outputs: list[string]     # Generated outputs
+      intermediate: list[string] # Artifacts created during process
+
+  # --- WHO (Participants & Roles) ---
+  who:
+    group_size:
+      min: integer
+      max: integer
+      optimal: integer
+
+    roles:
+      - name: string
+        required: boolean
+        responsibilities: list[string]
+
+    participant_requirements:
+      preparation: string       # What participants need beforehand
+      skills: list[string]      # Required participant capabilities
+      psychological_safety: enum # low | medium | high
+
+    power_dynamics:
+      hierarchy_sensitive: boolean
+      anonymity_supported: boolean
+      minority_voice_protection: boolean
+
+  # --- AI FACILITATION ---
+  ai_facilitation:
+    suitability: enum           # high | medium | low | not-recommended
+    automatable_phases: list[string]
+    human_required_phases: list[string]
+    prompt_templates: list[string]  # References to prompt files
+    evaluation_criteria: list[string]  # How to assess AI performance

@@ -1,0 +1,226 @@
+# Retrospective Pattern
+# Team reflection and improvement process
+
+id: retrospective
+name: Retrospective
+version: "1.0.0"
+category: generative
+tags:
+  - agile
+  - team-improvement
+  - reflection
+  - continuous-improvement
+
+source:
+  methodology: Agile Retrospective
+  creator: Various (Agile community)
+  reference_url: https://retrospectivewiki.org/
+  license: Public domain
+
+why:
+  purpose: >
+    Enable teams to reflect on recent work, identify improvements,
+    and commit to actionable changes for the next cycle.
+  outcomes:
+    - error_surfacing
+    - ideation
+    - agreement_building
+    - synthesis
+  use_cases:
+    - Sprint retrospectives
+    - Project post-mortems
+    - Team health checks
+    - Process improvement sessions
+  contraindications:
+    - Blame-heavy team cultures (needs safety work first)
+    - When no authority to implement changes
+    - Retrospective fatigue without action follow-through
+
+how:
+  format: hybrid  # Can be sync or async
+  interaction_mode: small-group
+  duration:
+    min_minutes: 30
+    max_minutes: 90
+    recommended_minutes: 60
+
+  phases:
+    - name: Set the Stage
+      purpose: Create psychological safety and focus
+      duration_minutes: 5
+      facilitator_actions:
+        - Welcome participants
+        - State the prime directive
+        - Set time boundaries
+        - Check-in activity
+      participant_actions:
+        - Arrive mentally present
+        - Participate in check-in
+      outputs:
+        - Team agreement on safety
+        - Focus established
+
+    - name: Gather Data
+      purpose: Collect observations about the period
+      duration_minutes: 15
+      facilitator_actions:
+        - Prompt for what happened
+        - Use gathering technique (4Ls, Start-Stop-Continue, etc.)
+        - Ensure all voices heard
+      participant_actions:
+        - Share observations
+        - Note successes and challenges
+        - Remain factual
+      outputs:
+        - Observation inventory
+        - Timeline of events (optional)
+
+    - name: Generate Insights
+      purpose: Find patterns and root causes
+      duration_minutes: 15
+      facilitator_actions:
+        - Facilitate grouping/clustering
+        - Ask "why" questions
+        - Identify themes
+      participant_actions:
+        - Analyze observations
+        - Identify patterns
+        - Discuss root causes
+      outputs:
+        - Themed insights
+        - Root cause analysis
+
+    - name: Decide What to Do
+      purpose: Select improvements to implement
+      duration_minutes: 15
+      facilitator_actions:
+        - Brainstorm improvements
+        - Prioritize (voting, etc.)
+        - Ensure actionability
+      participant_actions:
+        - Propose improvements
+        - Vote on priorities
+        - Commit to actions
+      outputs:
+        - Prioritized action items
+        - Owners assigned
+        - Success criteria defined
+
+    - name: Close the Retrospective
+      purpose: End with commitment and appreciation
+      duration_minutes: 5
+      facilitator_actions:
+        - Summarize actions
+        - Thank participants
+        - Quick feedback on retro itself
+      participant_actions:
+        - Confirm commitments
+        - Provide retro feedback
+      outputs:
+        - Action item summary
+        - Retro effectiveness feedback
+
+  intervention_style:
+    directiveness: semi-directive
+    question_types:
+      - open
+      - probing
+      - clarifying
+    timing: scheduled
+
+  artifacts:
+    inputs:
+      - Period to reflect on (sprint, project, etc.)
+      - Previous retro action items (for follow-up)
+    outputs:
+      - Action items with owners
+      - Insights documentation
+      - Team health snapshot
+    intermediate:
+      - Observation sticky notes
+      - Voting results
+      - Grouped themes
+
+who:
+  group_size:
+    min: 3
+    max: 15
+    optimal: 7
+
+  roles:
+    - name: Facilitator
+      required: true
+      responsibilities:
+        - Guide process
+        - Maintain safety
+        - Keep time
+        - Remain neutral
+    - name: Team Member
+      required: true
+      responsibilities:
+        - Share honestly
+        - Listen to others
+        - Commit to improvements
+
+  participant_requirements:
+    preparation: Reflection on the period
+    skills:
+      - Constructive feedback giving
+      - Active listening
+    psychological_safety: high
+
+  power_dynamics:
+    hierarchy_sensitive: true
+    anonymity_supported: true  # For input gathering phase
+    minority_voice_protection: true
+
+ai_facilitation:
+  suitability: medium
+  automatable_phases:
+    - Gather Data (async individual input)
+    - Generate Insights (clustering, synthesis)
+    - Close the Retrospective (summarization)
+  human_required_phases:
+    - Set the Stage (team dynamics)
+    - Decide What to Do (commitment requires presence)
+  prompt_templates:
+    - retrospective/gather-data.md
+    - retrospective/generate-insights.md
+    - retrospective/action-items.md
+  evaluation_criteria:
+    - Participation rate
+    - Action item completion (follow-up)
+    - Insight quality
+    - Team satisfaction with process
+
+# --- COMMON FORMATS ---
+formats:
+  - name: "4Ls"
+    description: "Liked, Learned, Lacked, Longed For"
+    gather_prompts:
+      - "What did you like about this period?"
+      - "What did you learn?"
+      - "What was lacking?"
+      - "What do you long for?"
+
+  - name: "Start-Stop-Continue"
+    description: "What to start, stop, and continue doing"
+    gather_prompts:
+      - "What should we start doing?"
+      - "What should we stop doing?"
+      - "What should we continue doing?"
+
+  - name: "Mad-Sad-Glad"
+    description: "Emotional response categories"
+    gather_prompts:
+      - "What made you mad?"
+      - "What made you sad?"
+      - "What made you glad?"
+
+  - name: "Sailboat"
+    description: "Visual metaphor for progress and obstacles"
+    gather_prompts:
+      - "What is the wind in our sails? (helping us)"
+      - "What are our anchors? (holding us back)"
+      - "What rocks lie ahead? (risks)"
+      - "What is our island? (goal)"
