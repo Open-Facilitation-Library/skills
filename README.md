@@ -25,6 +25,10 @@ Each pattern follows the [Why-How-Who schema](patterns/schema/README.md):
 | [Six Thinking Hats](patterns/generative/six-thinking-hats.yaml) | Generative | Medium |
 | [Retrospective](patterns/generative/retrospective.yaml) | Generative | Medium |
 
+## Resources
+
+- [Facilitation Self-Assessment](docs/facilitation-self-assessment.md) - Competency checklist for during-session evaluation (Lucy Chambers)
+
 ## Adding Patterns
 
 1. Use the [pattern schema](patterns/schema/pattern-schema.yaml) as template
