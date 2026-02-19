@@ -6,6 +6,7 @@ Machine-readable facilitation patterns and AI prompt templates for the [Open Fac
 
 | Resource | Description |
 |----------|-------------|
+| [Agent Skills Design Guide](../blob/main/docs/agent-skills-design-guide.md) | Key principles from the Agent Skills spec for building executable facilitation skills |
 | [Pattern Schema](../blob/main/patterns/schema/README.md) | Why-How-Who framework for structuring patterns |
 | [Facilitation Self-Assessment](../blob/main/docs/facilitation-self-assessment.md) | During-session competency checklist (Lucy Chambers) |
 | [WHoW Framework](WHoW-Framework) | Academic framework for moderation analysis (Chen et al. 2024) |
